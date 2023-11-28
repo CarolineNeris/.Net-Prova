@@ -1,6 +1,4 @@
-﻿using Sytem;
-using namespace academia;
-using Sytem.Collections.Generic
+namespace academia;
 
 class Pessoa 
 {
