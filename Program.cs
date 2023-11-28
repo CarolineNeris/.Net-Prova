@@ -8,7 +8,7 @@ class Pessoa
     public CPF {get; set;}
 }
 
-class Treinador
+class Treinador : Pessoa
 {
     private static readonly HashSet<string> cpfs = new HashSet<string>();
 
@@ -34,7 +34,7 @@ class Treinador
     // Restante da classe...
 }
 
-class Cliente
+class Cliente : Pessoa
 {
     private static readonly HashSet<string> cpfs = new HashSet<string>();
 
