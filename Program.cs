@@ -8,20 +8,54 @@ class Pessoa
     public CPF {get; set;}
 }
 
-class Treinador : Pessoa
-{
-    public string CREF {get; set;}
-}
-
-class Cliente : Pessoa
-{
-    public double Altura {get, set}
-    public double Peso {get; set;}
-}
-
 class Treinador
-
 {
-    private List<treinador> treinadores = new List <Treinador>();
-    private
+    private static readonly HashSet<string> cpfs = new HashSet<string>();
+
+    private string cpf;
+
+    public string CPF
+    {
+        get => cpf;
+        set
+        {
+            if (value.Length == 11 && !cpfs.Contains(value))
+            {
+                cpf = value;
+                cpfs.Add(value);
+            }
+            else
+            {
+                throw new ArgumentException("CPF inválido ou já existente.");
+            }
+        }
+    }
+
+    // Restante da classe...
+}
+
+class Cliente
+{
+    private static readonly HashSet<string> cpfs = new HashSet<string>();
+
+    private string cpf;
+
+    public string CPF
+    {
+        get => cpf;
+        set
+        {
+            if (value.Length == 11 && !cpfs.Contains(value))
+            {
+                cpf = value;
+                cpfs.Add(value);
+            }
+            else
+            {
+                throw new ArgumentException("CPF inválido ou já existente.");
+            }
+        }
+    }
+
+    // Restante da classe...
 }
