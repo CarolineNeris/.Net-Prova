@@ -1,0 +1,61 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/ana-caroline-fonseca/Documentos/prova/.Net-Prova/.Net-Prova.csproj": {}
+  },
+  "projects": {
+    "/home/ana-caroline-fonseca/Documentos/prova/.Net-Prova/.Net-Prova.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/ana-caroline-fonseca/Documentos/prova/.Net-Prova/.Net-Prova.csproj",
+        "projectName": ".Net-Prova",
+        "projectPath": "/home/ana-caroline-fonseca/Documentos/prova/.Net-Prova/.Net-Prova.csproj",
+        "packagesPath": "/home/ana-caroline-fonseca/.nuget/packages/",
+        "outputPath": "/home/ana-caroline-fonseca/Documentos/prova/.Net-Prova/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/ana-caroline-fonseca/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.114/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
