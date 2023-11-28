@@ -4,58 +4,99 @@ usin Sytem.Collections.Generic
 class Pessoa 
 {
     public string Nome {get; set;}
-    public DateTime DataNascimento {get; set}
-    public CPF {get; set;}
+    private DateTime dataNascimento;
+    public DateTime DataNascimento
+    {
+        get => dataNascimento;
+        set
+        {
+            // Verifica se a data de nascimento está no passado (não futura)
+            if (value < DateTime.Now)
+            {
+                dataNascimento = value;
+            }
+            else
+            {
+                throw new ArgumentException("Data de nascimento inválida.");
+            }
+        }
+    }
+    private string cpf;
+    public string CPF
+    {
+        get => cpf;
+        set
+        {
+            if (value.Length == 11 && !cpfs.Contains(value))
+            {
+                cpf = value;
+                cpfs.Add(value);
+            }
+            else
+            {
+                throw new ArgumentException("CPF inválido ou já existente.");
+            }
+        }
+    }
 }
 
 class Treinador : Pessoa
 {
-    private static readonly HashSet<string> cpfs = new HashSet<string>();
-
-    private string cpf;
-
-    public string CPF
+  private string cref;  
+  public string CREF
     {
-        get => cpf;
+        get => cref;
         set
         {
-            if (value.Length == 11 && !cpfs.Contains(value))
+            // Condição para validar o formato do CREF (por exemplo, deve ter 6 dígitos)
+            if (value.Length == 6 && !crefs.Contains(value))
             {
-                cpf = value;
-                cpfs.Add(value);
+                cref = value;
+                crefs.Add(value);
             }
             else
             {
-                throw new ArgumentException("CPF inválido ou já existente.");
+                throw new ArgumentException("CREF inválido ou já existente.");
             }
         }
     }
-
-    // Restante da classe...
 }
+
+
 
 class Cliente : Pessoa
 {
-    private static readonly HashSet<string> cpfs = new HashSet<string>();
-
-    private string cpf;
-
-    public string CPF
+    private double altura;
+    public double Altura
     {
-        get => cpf;
+        get => altura;
         set
         {
-            if (value.Length == 11 && !cpfs.Contains(value))
+            if (value >= 0)
             {
-                cpf = value;
-                cpfs.Add(value);
+                altura = value;
             }
             else
             {
-                throw new ArgumentException("CPF inválido ou já existente.");
+                throw new ArgumentException("Altura não pode ser negativa.");
             }
         }
     }
 
-    // Restante da classe...
+    private double peso;
+    public double Peso
+    {
+        get => peso;
+        set
+        {
+            if (value >= 0)
+            {
+                peso = value;
+            }
+            else
+            {
+                throw new ArgumentException("Peso não pode ser negativo.");
+            }
+        }
+    }
 }
