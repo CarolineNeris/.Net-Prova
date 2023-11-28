@@ -19,8 +19,9 @@ class Cliente : Pessoa
     public double Peso {get; set;}
 }
 
-class Academia
+class Treinador
 
 {
-    private List<treinador> treinadores = 
+    private List<treinador> treinadores = new List <Treinador>();
+    private
 }
