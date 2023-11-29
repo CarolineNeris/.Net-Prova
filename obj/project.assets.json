@@ -8,25 +8,26 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/ana-caroline-fonseca/.nuget/packages/": {}
+    "C:\\Users\\Carol\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/ana-caroline-fonseca/Documentos/prova/.Net-Prova/.Net-Prova.csproj",
+      "projectUniqueName": "C:\\Users\\Carol\\Documents\\VS CODEg\\VS CODE\\PROJETO\\TIC18-.NET\\prova\\.net-prova\\.Net-Prova.csproj",
       "projectName": ".Net-Prova",
-      "projectPath": "/home/ana-caroline-fonseca/Documentos/prova/.Net-Prova/.Net-Prova.csproj",
-      "packagesPath": "/home/ana-caroline-fonseca/.nuget/packages/",
-      "outputPath": "/home/ana-caroline-fonseca/Documentos/prova/.Net-Prova/obj/",
+      "projectPath": "C:\\Users\\Carol\\Documents\\VS CODEg\\VS CODE\\PROJETO\\TIC18-.NET\\prova\\.net-prova\\.Net-Prova.csproj",
+      "packagesPath": "C:\\Users\\Carol\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Carol\\Documents\\VS CODEg\\VS CODE\\PROJETO\\TIC18-.NET\\prova\\.net-prova\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/ana-caroline-fonseca/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\Carol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {}
       },
       "frameworks": {
         "net7.0": {
@@ -59,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.114/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
