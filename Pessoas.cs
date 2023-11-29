@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Pessoas
 {
-    public class Pessoa 
+    public class Pessoa
     {
         public string Nome { get; set; } = string.Empty;
         protected DateTime dataNascimento;
@@ -26,11 +26,11 @@ namespace Pessoas
         protected string cpf = string.Empty;
         protected static List<string> cpfs = new List<string>();
 
-    public Pessoa()
-    {
-    }
+        public Pessoa()
+        {
+        }
 
-    public string CPF
+        public string CPF
         {
             get => cpf;
             set
