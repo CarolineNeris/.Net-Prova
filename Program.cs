@@ -1,45 +1,112 @@
 ﻿using System;
 using Pessoas; // Importando o namespace onde as classes Pessoa, Cliente e Treinador estão definidas
-using Academia; // Importando o namespace onde a classe Metodos está definida
+using Academias;
+using Relatorios; // Importando o namespace onde a classe Metodos está definida
+
+using System;
 
 class Program
 {
     static void Main()
     {
-        Metodos metodos = new Metodos(); // Instanciando a classe Metodos para utilizarmos seus métodos
+        Academia academia = new Academia();
+        Relatorio relatorio = new Relatorio();
 
-        // Exemplo de cadastro de um cliente
-        metodos.CadastrarCliente("João", new DateTime(1990, 5, 15), "12345678900", 1.75, 70.5);
-        /*metodos.CadastrarCliente("Betinho do Flamengo", new DateTime(1985, 10, 15), "452167215963", 1.80, 86.6);
-        metodos.CadastrarCliente("Maria Fernanda", new DateTime(1992, 3, 22), "98765432101", 1.70, 60.2);
-        metodos.CadastrarCliente("Lucas Oliveira", new DateTime(1988, 7, 10), "12345678902", 1.85, 80.5);
-        metodos.CadastrarCliente("Ana Carolina, a cantora", new DateTime(1995, 9, 5), "45612378903", 1.65, 55.8);
-        metodos.CadastrarCliente("Rafaela Silva", new DateTime(1987, 12, 30), "78912345604", 1.75, 70.0);
-        metodos.CadastrarCliente("João da Silva", new DateTime(1990, 5, 5), "12378945605", 1.80, 85.3);*/
+        bool sair = false;
 
+        Console.WriteLine("Selecione a operação desejada:");
+        Console.WriteLine("1. Cadastrar Cliente");
+        Console.WriteLine("2. Cadastrar Treinador");
+        Console.WriteLine("3. Exibir Cadastros");
+        Console.WriteLine("4. Relatório de Treinadores por Idade");
+        Console.WriteLine("5. Relatório de Clientes por Idade");
+        Console.WriteLine("6. Relatório de Clientes por IMC");
+        Console.WriteLine("7. Relatório de Clientes em Ordem Alfabética");
+        Console.WriteLine("8. Relatório de Clientes do Mais Velho para o Mais Novo");
+        Console.WriteLine("9. Relatório de Aniversariantes do Mês");
+        Console.WriteLine("0. Sair");
 
-        // Exemplo de cadastro de um treinador
-        metodos.CadastrarTreinador("Maria", new DateTime(1985, 9, 20), "98765432100", "123456");
-        /*metodos.CadastrarTreinador("Ana", new DateTime(1992, 1, 10), "12345678901", "654321");
-        metodos.CadastrarTreinador("Pedro", new DateTime(1980, 4, 5), "98765432109", "987654");
-        metodos.CadastrarTreinador("Mariana", new DateTime(1975, 8, 15), "12312312312", "111222");
-        metodos.CadastrarTreinador("Rafael", new DateTime(1987, 12, 25), "45678912356", "987123");
-        metodos.CadastrarTreinador("Isabela", new DateTime(1990, 7, 3), "98765432100", "123123");*/
+        string opcao = Console.ReadLine();
 
+        switch (opcao)
+        {
+            case "1":
+                Console.WriteLine("Digite o nome do cliente:");
+                string nomeCliente = Console.ReadLine();
+                Console.WriteLine("Digite a data de nascimento do cliente (yyyy-MM-dd):");
+                DateTime dataNascimentoCliente = Convert.ToDateTime(Console.ReadLine());
+                Console.WriteLine("Digite o CPF do cliente:");
+                string cpfCliente = Console.ReadLine();
+                Console.WriteLine("Digite a altura do cliente:");
+                double alturaCliente = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Digite o peso do cliente:");
+                double pesoCliente = Convert.ToDouble(Console.ReadLine());
+                academia.CadastrarCliente(nomeCliente, dataNascimentoCliente, cpfCliente, alturaCliente, pesoCliente);
+                break;
 
-        // Exibindo os cadastros realizados
-        metodos.ExibirCadastros();
+            case "2":
+                Console.WriteLine("Digite o nome do treinador:");
+                string nomeTreinador = Console.ReadLine();
+                Console.WriteLine("Digite a data de nascimento do treinador (yyyy-MM-dd):");
+                DateTime dataNascimentoTreinador = Convert.ToDateTime(Console.ReadLine());
+                Console.WriteLine("Digite o CPF do treinador:");
+                string cpfTreinador = Console.ReadLine();
+                Console.WriteLine("Digite o CREF do treinador:");
+                string crefTreinador = Console.ReadLine();
+                academia.CadastrarTreinador(nomeTreinador, dataNascimentoTreinador, cpfTreinador, crefTreinador);
+                break;
 
-        metodos.RelatorioTreinadoresPorIdade(25, 40);
+            case "3":
+                academia.ExibirCadastros();
+                break;
 
-        metodos.RelatorioClientesPorIdade(20, 50);
+            case "4":
+                Console.WriteLine("Digite a idade mínima:");
+                int idadeMinimaTreinadores = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Digite a idade máxima:");
+                int idadeMaximaTreinadores = Convert.ToInt32(Console.ReadLine());
+                relatorio.RelatorioTreinadoresPorIdade(idadeMinimaTreinadores, idadeMaximaTreinadores);
+                break;
 
-        metodos.RelatorioClientesPorIMC(25.0);
+            case "5":
+                Console.WriteLine("Digite a idade mínima:");
+                int idadeMinimaClientes = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Digite a idade máxima:");
+                int idadeMaximaClientes = Convert.ToInt32(Console.ReadLine());
+                relatorio.RelatorioClientesPorIdade(idadeMinimaClientes, idadeMaximaClientes);
+                break;
 
-        metodos.RelatorioClientesOrdemAlfabetica();
+            case "6":
+                Console.WriteLine("Digite o valor do IMC:");
+                double valorIMC = Convert.ToDouble(Console.ReadLine());
+                relatorio.RelatorioClientesPorIMC(valorIMC);
+                break;
 
-        metodos.RelatorioClientesPorIdade();
+            case "7":
+                relatorio.RelatorioClientesOrdemAlfabetica();
+                break;
 
-        metodos.RelatorioAniversariantesDoMes(9);
+            case "8":
+                relatorio.RelatorioClientesPorIdade();
+                break;
+
+            case "9":
+                Console.WriteLine("Digite o mês desejado:");
+                int mesAniversariantes = Convert.ToInt32(Console.ReadLine());
+                relatorio.RelatorioAniversariantesDoMes(mesAniversariantes);
+                break;
+            case "0":
+                sair = true;
+                break;
+            default:
+                Console.WriteLine("Opção inválida!");
+                break;
+        }
+        if (!sair)
+        {
+            Console.WriteLine("Pressione qualquer tecla para voltar ao menu...");
+            Console.ReadKey();
+            Console.Clear();
+        }
     }
 }
